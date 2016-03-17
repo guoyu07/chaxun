@@ -6,8 +6,8 @@
         <li class="admin-parent">
           <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 查询管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-            <li><a href="admin-chaxun.html"><span class="am-icon-check"></span> 查询列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
-            <li><a href="admin-chaxun-add.html"><span class="am-icon-check"></span> 添加查询</a></li>
+            <li><a href="/admin/table"><span class="am-icon-check"></span> 查询列表<span class="am-badge am-badge-secondary am-margin-right am-fr">{{ App\Table::all()->count() }}</span></a></li>
+            <li><a href="/admin/table/create"><span class="am-icon-check"></span> 添加查询</a></li>
           </ul>
         </li>
         <li><a href="admin-table.html"><span class="am-icon-table"></span> 数据管理</a></li>

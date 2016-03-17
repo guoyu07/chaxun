@@ -11,6 +11,17 @@
   <link rel="stylesheet" href="/assets/css/amazeui.min.css"/>
   <link rel="stylesheet" href="/assets/css/admin.css">
   <link rel="stylesheet" href="/assets/css/app.css">
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/app.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -30,7 +41,7 @@
 	<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
 	  <li class="am-dropdown" data-am-dropdown>
 		<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-		  <span class="am-icon-users"></span> {{ Auth::user()->name }}({{$ulevel=Auth::user()->level}}{{ config('chaxun.user.level.ulevel') }}) <span class="am-icon-caret-down"></span>
+		  <span class="am-icon-users"></span> {{ Auth::user()->name }}({{ config('chaxun.user.level.'.Auth::user()->level) }}) <span class="am-icon-caret-down"></span>
 		</a>
 		<ul class="am-dropdown-content">
 		  <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
@@ -67,16 +78,5 @@
   <p class="am-padding-left">© 2016 Power by weihan. Licensed under MIT license.</p>
 </footer>
 
-<!--[if lt IE 9]>
-<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="/assets/js/amazeui.ie8polyfill.min.js"></script>
-<![endif]-->
-
-<!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/assets/js/jquery.min.js"></script>
-<!--<![endif]-->
-<script src="/assets/js/amazeui.min.js"></script>
-<script src="/assets/js/app.js"></script>
 </body>
 </html>
