@@ -25,24 +25,24 @@
 			<script>$('#login-error').alert();</script>
 		@endif
 
-			<form class="am-form" method="post" action="{{ URL('admin/table/'.$table->id) }}">
+			<form class="am-form" method="post" action="{{ URL('admin/table') }}">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<input name="_method" type="hidden" value="PUT">
+				<input name="uid" value="{{Auth::user()->id}}" type="hidden">
 			  <fieldset>
 			    <div class="am-form-group">
 			      <label for="doc-ipt-text-1">标题</label>
-			      <input type="text" name="title" value="{{$table->title}}" id="doc-ipt-text-1" placeholder="输入查询标题">
+			      <input type="text" name="title" id="doc-ipt-text-1" placeholder="输入查询标题">
 			    </div>
 
 				<div class="am-form-group am-form-icon">
 				<label for="doc-select-2">时间控制</label>
 				    <i class="am-icon-calendar"></i>
-				    <input size="16" type="text" name="start_time" value="{{date('Y-m-d h:i',$table->start_time)}}" class="form-datetime-start am-form-field" placeholder="查询开始时间">
+				    <input size="16" type="text" name="start_time" value="" class="form-datetime-start am-form-field" placeholder="查询开始时间">
 				  </div>
 
 				<div class="am-form-group am-form-icon">
 				    <i class="am-icon-calendar"></i>
-				    <input size="16" type="text" name="end_time" value="{{date('Y-m-d h:i',$table->end_time)}}" class="form-datetime-end am-form-field" placeholder="查询结束时间">
+				    <input size="16" type="text" name="end_time" value="" class="form-datetime-end am-form-field" placeholder="查询结束时间">
 				  </div>
 
 			    <div class="am-form-group">
@@ -55,8 +55,8 @@
 			    </div>
 
 			    <div class="am-form-group">
-			      <label for="doc-ta-1">查询说明</label>
-			      <textarea class="" name="note" rows="5" id="doc-ta-1">{{$table->note}}</textarea>
+			      <label for="doc-ta-1">文本域</label>
+			      <textarea class="" name="note" rows="5" id="doc-ta-1"></textarea>
 			    </div>
 
 			    <p><button type="submit" class="am-btn am-btn-default">提交</button></p>

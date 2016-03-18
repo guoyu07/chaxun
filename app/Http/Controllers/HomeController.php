@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         //访问首页
-        return view('index.index')->withTables(Table::where('status', '=', 1)->paginate(5));
+        return view('index.index')->withTables(Table::where('status', '=', 1)->paginate(6));
     }
 
     /**

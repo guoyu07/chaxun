@@ -17,7 +17,12 @@ class TableController extends Controller
      */
     public function index()
     {
-        return view('admin.table.index')->withTables(Table::all());
+        if(Auth::user()->level==1){
+            return view('admin.table.index')->withTables(Table::paginate(6));
+        }else{
+            return view('admin.table.index')->withTables(Table::where('uid', '=', Auth::user()->id)->paginate(6));
+        }
+
     }
 
     /**
@@ -27,7 +32,7 @@ class TableController extends Controller
      */
     public function create()
     {
-        return view('admin.table.edit');
+        return view('admin.table.create');
     }
 
     /**
@@ -75,7 +80,7 @@ class TableController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.table.edit')->withtable(Table::find($id));
     }
 
     /**
@@ -87,7 +92,38 @@ class TableController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'status' => 'required',
+        ]);
+
+        $table = Table::find($id);
+        $table->title=Input::get('title');
+        $table->start_time=strtotime(Input::get('start_time'));
+        $table->end_time=strtotime(Input::get('end_time'));
+        $table->status=Input::get('status');
+        $table->note=Input::get('note');
+        if(Auth::user()->id == $table->uid){
+            if ($table->save()) {
+                return Redirect::to('admin/table');
+            } else {
+                return Redirect::back()->withInput()->withErrors('保存失败！');
+            }
+        }else{
+            if(Auth::user()->level==1){
+                if ($table->save()) {
+                    return Redirect::to('admin/table');
+                } else {
+                    return Redirect::back()->withInput()->withErrors('保存失败！');
+                }
+            }else{
+                return Redirect::to('admin/table')->withErrors('无权编辑！');
+            }
+        }
+
     }
 
     /**

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>Landing Page | Amaze UI Example</title>
+  <title>{{ config('chaxun.sitename') }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -17,7 +17,7 @@
 <header class="am-topbar am-topbar-fixed-top">
   <div class="am-container">
     <h1 class="am-topbar-brand">
-      <a href="#">通用查询系统</a>
+      <a href="/">{{ config('chaxun.sitename') }}</a>
     </h1>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
@@ -26,7 +26,7 @@
 
     <div class="am-collapse am-topbar-collapse" id="collapse-head">
       <ul class="am-nav am-nav-pills am-topbar-nav">
-        <li class="am-active"><a href="#">首页</a></li>
+        <li class="am-active"><a href="/">首页</a></li>
         <li class="am-dropdown" data-am-dropdown>
           <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
             下拉菜单 <span class="am-icon-caret-down"></span>

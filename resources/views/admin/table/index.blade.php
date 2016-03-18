@@ -52,7 +52,12 @@
 
 				</tbody>
 			</table>
-
+<?php
+$pagebar = str_replace('pagination', 'am-pagination am-pagination-centered', $tables->render());
+$pagebar = str_replace('disabled', 'am-disabled', $pagebar);
+$pagebar = str_replace('active', 'am-active', $pagebar);
+?>
+{!!$pagebar!!}
 		</div>
 	</div>
 

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>Login Page | Amaze UI Example</title>
+  <title>{{ config('chaxun.sitename') }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -27,7 +27,7 @@
 <body>
 <div class="header">
   <div class="am-g">
-    <h1>通用查询系统</h1>
+    <h1>{{ config('chaxun.sitename') }}</h1>
   </div>
   <hr />
 </div>
