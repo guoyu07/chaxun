@@ -16,91 +16,26 @@
 	          </tr>
 	        </thead>
 	        <tbody>
+	        @foreach ($tables as $table)
 	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
+	              <td>#{{$table->id}}</td>
+	              <td>{{$table->title}}</td>
+	              <td>{{$table->id}}</td>
 	              <td>2016-03-12</td>
 	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
+	                  <a href="/show/{{$table->id}}" class="am-btn am-btn-xs get-btn">查询</a>
 	              </td>
 	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
-	            <tr>
-	              <td>#10000</td>
-	              <td>录取查询</td>
-	              <td>2016-03-12</td>
-	              <td>2016-03-12</td>
-	              <td>
-	                  <a href="#" class="am-btn am-btn-xs get-btn">查询</a>
-	              </td>
-	            </tr>
+			@endforeach
 
 	        </tbody>
 	      </table>
-
+<?php
+$pagebar = str_replace('pagination', 'am-pagination am-pagination-centered', $tables->render());
+$pagebar = str_replace('disabled', 'am-disabled', $pagebar);
+$pagebar = str_replace('active', 'am-active', $pagebar);
+?>
+{!!$pagebar!!}
 	    </div>
 	  </div>
 	</div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Table;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         //访问首页
-        return view('index.index');
+        return view('index.index')->withTables(Table::where('status', '=', 1)->paginate(5));
     }
 
     /**
