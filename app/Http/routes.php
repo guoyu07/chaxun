@@ -32,4 +32,5 @@
         Route::get('/','IndexController@index');
         Route::resource('user', 'UserController');
         Route::resource('table', 'TableController');
+        Route::resource('table.field', 'FieldController');
     });

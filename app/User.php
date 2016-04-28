@@ -32,4 +32,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * 获取用户的查询。
+     */
+    public function tables()
+    {
+        return $this->hasMany('App\Table','uid','id');
+    }
 }

@@ -19,6 +19,7 @@ class CreateTablesTable extends Migration
             $table->integer('start_time');
             $table->integer('end_time');
             $table->integer('status');
+            $table->integer('fieldstatus');
             $table->text('note');
             $table->timestamps();
         });

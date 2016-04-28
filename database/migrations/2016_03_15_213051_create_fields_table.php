@@ -14,6 +14,11 @@ class CreateFieldsTable extends Migration
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('tid');
+            $table->string('name');
+            $table->integer('orderno');
+            $table->integer('input');
+            $table->integer('isshow');
             $table->timestamps();
         });
     }

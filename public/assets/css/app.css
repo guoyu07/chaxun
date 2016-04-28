@@ -17,7 +17,9 @@
     color: #000;
 }
 
-tbody tr:hover{color: #000;}
+tbody tr:hover {
+    color: #000;
+}
 
 .footer p {
     color: #7f8c8d;
@@ -26,8 +28,13 @@ tbody tr:hover{color: #000;}
     text-align: center;
     background: #2d3e50;
 }
-.user-add{
+
+.user-add {
     height: 120px;
 }
 
+.am-pagination {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
