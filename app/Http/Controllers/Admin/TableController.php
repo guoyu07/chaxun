@@ -149,7 +149,7 @@
 					return Redirect::to('admin/table');
 				} else {
 					return Redirect('admin/table')
-						->withErrors(['tips' => '权限不足！',]);;
+						->withErrors(['tips' => '权限不足！',]);
 				}
 			}
 		}

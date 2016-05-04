@@ -32,5 +32,8 @@
         Route::get('/','IndexController@index');
         Route::resource('user', 'UserController');
         Route::resource('table', 'TableController');
+        Route::post('table/{tid}/field/edit', 'FieldController@editfield');
+        Route::get('table/{tid}/field/save', 'FieldController@savefield');
+        Route::get('table/{tid}/field/{fid}/delete', 'FieldController@destroy');
         Route::resource('table.field', 'FieldController');
     });
