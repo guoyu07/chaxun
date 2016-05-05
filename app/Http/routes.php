@@ -32,8 +32,14 @@
         Route::get('/','IndexController@index');
         Route::resource('user', 'UserController');
         Route::resource('table', 'TableController');
+
         Route::post('table/{tid}/field/edit', 'FieldController@editfield');
         Route::get('table/{tid}/field/save', 'FieldController@savefield');
         Route::get('table/{tid}/field/{fid}/delete', 'FieldController@destroy');
         Route::resource('table.field', 'FieldController');
+
+        Route::get('table/{tid}/data/template', 'DataController@template');
+        Route::get('table/{tid}/data/download', 'DataController@download');
+        Route::get('table/{tid}/data/{did}/delete', 'DataController@destroy');
+        Route::resource('table.data', 'DataController');
     });

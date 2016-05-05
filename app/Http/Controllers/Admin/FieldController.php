@@ -17,7 +17,8 @@
 		 * @return \Illuminate\Http\Response
 		 */
 		public function index($tableid)
-		{//TODO:ORDER
+		{
+			//TODO:ORDER
 			return view('admin.field.index')->withFields(Table::find($tableid)->fields)->withTable(Table::find($tableid));
 		}
 

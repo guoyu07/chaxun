@@ -38,6 +38,7 @@
 								<!-- <li><a href="#">查看</a></li> -->
 								<li><a href="{{ URL('admin/table/'.$table->id.'/edit') }}">编辑</a></li>
 								<li><a href="{{ URL('admin/table/'.$table->id.'/field') }}">字段管理</a></li>
+								@if($table->fieldstatus) <li><a href="{{ URL('admin/table/'.$table->id.'/data') }}">数据管理</a></li>@endif
 								<li><a href="#" onclick="$('#table_del_{{$table->id}}').submit();">删除</a></li>
 
 								<form action="{{ URL('admin/table/'.$table->id) }}" method="POST" id="table_del_{{$table->id}}">

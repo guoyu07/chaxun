@@ -24,4 +24,9 @@
 		{
 			return $this->hasMany('App\Field','tid','id');
 		}
+
+		public function datas()
+		{
+			return $this->hasMany('App\Data','tid','id');
+		}
 	}

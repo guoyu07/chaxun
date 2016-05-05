@@ -10,7 +10,6 @@
             <li><a href="/admin/table/create"><span class="am-icon-check"></span> 添加查询</a></li>
           </ul>
         </li>
-        <li><a href="admin-table.html"><span class="am-icon-table"></span> 数据管理</a></li>
         <li><a href="admin-table.html"><span class="am-icon-table"></span> 日志管理</a></li>
         <li><a href="/admin/user"><span class="am-icon-users"></span> 用户管理</a></li>
         <li><a href="/auth/logout"><span class="am-icon-sign-out"></span> 注销</a></li>
